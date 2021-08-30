@@ -38,7 +38,7 @@ function Save() {
 
     xhttp = new XMLHttpRequest();
 
-    var url = "http://localhost/mychat/Tools/updateProfile.php";
+    var url = "Tools/updateProfile.php";
 
     xhttp.open("POST", url, true);
 

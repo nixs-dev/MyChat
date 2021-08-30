@@ -99,6 +99,12 @@
     margin-left: 20px;
 }
 
+#chat {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 #chat-footer {
     position: absolute;
     bottom: 0;
@@ -125,6 +131,7 @@
     -khtml-box-shadow: 10px 10px 5px #ccc;
     border-radius: 10px;
     display: inline-block;
+    margin-right: 10px;
 }
 
 #sidebar {

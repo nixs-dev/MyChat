@@ -6,7 +6,7 @@ var userName = null;
 
 function getSession() {
     request = new XMLHttpRequest();
-    var url = "http://localhost/mychat/Tools/getPhpSession.php";
+    var url = "Tools/getPhpSession.php";
     request.open("GET", url, false);
     request.onreadystatechange = function() {
 
@@ -33,11 +33,11 @@ function getSession() {
 
 function finishSession() {
     request = new XMLHttpRequest();
-    var url = "http://localhost/mychat/Tools/finishSession.php";
+    var url = "Tools/finishSession.php";
     request.open("GET", url, true);
     request.onreadystatechange = function() {
 
-        window.location.href = 'http://localhost/mychat/';
+        window.location.href = '/';
         
     };
     request.send();
