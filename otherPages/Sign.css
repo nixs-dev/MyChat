@@ -1,0 +1,38 @@
+body {
+    background-image: url("../Images/backgroundLogin.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.btn {
+    width: 90%;
+}
+
+
+#frame {
+    width: 40%;
+    height: 90%;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: blueviolet;
+
+    border: 5px inset #6a004d;
+}

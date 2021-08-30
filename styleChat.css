@@ -1,0 +1,206 @@
+#bodyPage {
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 16px;
+
+    background-image: url("Images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-popup {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    float: right;
+    border: 3px solid #f1f1f1;
+}
+
+
+.msg {
+    width: 300px;
+    margin: 50px auto;
+    background: #00bfb6;
+    padding: 10px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+    font-family: arial;
+    position: relative;
+    float: left;
+    left: 30px;
+}
+
+.msg:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #00bfb6;
+    border-top: 10px solid #00bfb6;
+    border-bottom: 10px solid transparent;
+    left: -19px;
+    top: 6px;
+}
+
+.msgAnother {
+    width: 300px;
+    margin: 50px auto;
+    background: #00bfb6;
+    padding: 10px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+    font-family: arial;
+    position: relative;
+    float: right;
+    right: 30px;
+}
+
+.msgAnother:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #00bfb6;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #00bfb6;
+    border-bottom: 10px solid transparent;
+    right: -19px;
+    top: 6px;
+}
+
+#message {
+    display:inline-block;
+    left: 30px;
+    width: 60%;
+    height: 60%;
+}
+
+#send {
+    display:inline-block;
+    width: 30%;
+    height: 60%;
+    margin-left: 20px;
+}
+
+#info {
+    display: inline-block;
+    width: 10%;
+    height: 60%;
+    margin-left: 20px;
+}
+
+#chat-footer {
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-body {
+    background-color: rgba(0, 0, 255, 0.5);
+    width: 100%;
+    height: 90%;
+    overflow:auto;
+}
+
+.profile {
+    background-color: #f1f1f1;
+    box-shadow: 10px 10px 5px #ccc;
+    -moz-box-shadow: 10px 10px 5px #ccc;
+    -webkit-box-shadow: 10px 10px 5px #ccc;
+    -khtml-box-shadow: 10px 10px 5px #ccc;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+#sidebar {
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+
+    background-image: url("Images/sideBar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-box-shadow:inset 0px 0px 0px 5px #000;
+    -moz-box-shadow:inset 0px 0px 0px 5px #000
+    box-shadow:inset 0px 0px 0px 5px #000
+}
+
+#profilePhoto {
+    position: absolute;
+    top: 100;
+}
+
+#profilePhoto img {
+    height: 150px;
+    width: 150px;
+}
+
+#photoMenu {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#options {
+    position: absolute;
+    top: 300;
+}
+
+#options div {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(0, 36, 113);
+    border: solid;
+    border-color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#options a {
+    color: black;
+}
+
+#options label:hover {
+    cursor: pointer;
+}
+
+#logout {
+    background-color: black;
+    position: absolute;
+    bottom: 10;
+    right: 5;
+
+    cursor: pointer;
+}
+
+#logout img {
+    height: 20px;
+    width: 20px;
+}

@@ -1,0 +1,81 @@
+body {
+    background-image: url("../Images/backgroundLogin.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#title {
+    top: 40;
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.btn {
+    width: 90%;
+}
+
+
+#frame {
+    width: 40%;
+    height: 90%;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../Images/userBackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border: 5px inset #6a004d;
+}
+
+#txtChangePass {
+    margin-bottom: 30px;
+}
+
+#profilePhoto {
+    width: 200px;
+    height: 200px;
+
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+}
+
+img:hover {
+    background-color:#000;
+    opacity: 0.5;
+}
+
+
+#change {
+    position: absolute;
+    right: 5;
+    top: 5;
+}
+
+#save {
+    position: absolute;
+    bottom: 5;
+}
