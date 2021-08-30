@@ -21,7 +21,7 @@
         </div>
         <div id="options">
             <div>
-                <a href="http://localhost/mychat/otherPages/MyProfile.php"><label>Meu Perfil</label></a>
+                <a href="otherPages/MyProfile.php"><label>Meu Perfil</label></a>
             </div>
             <div>
                 <label>Configurações</label>

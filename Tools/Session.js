@@ -6,7 +6,7 @@ var userName = null;
 
 function getSession() {
     request = new XMLHttpRequest();
-    var url = "Tools/getPhpSession.php";
+    var url = "/Tools/getPhpSession.php";
     request.open("GET", url, false);
     request.onreadystatechange = function() {
 
