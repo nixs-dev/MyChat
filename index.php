@@ -8,19 +8,20 @@
 
 <body>
     <form id="frame" method="post">
-        <h2 style="margin-bottom: 50px;">Login</h2>
-        <div>
-            <label class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="username" name="username">
+        <h1 style="margin-bottom: 50px;">Login</h1>
+        <div class="inputs">
+            <div class="input">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Nome de usuário">
+            </div>
+            <div class="input">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
+            </div>
+
+            <div id="result" style="margin-bottom: 10px; color: red; -webkit-text-stroke: 0.5px black;">
+            </div>
+            <button type="submit" class="btn">Entrar</button>
         </div>
-        <div>
-            <label class="form-label">Senha</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <div id="result" style="margin-bottom: 10px; color: red; -webkit-text-stroke: 0.5px black;">
-        </div>
-        <button type="submit" class="btn btn-info">Entrar</button>
-        <a href="otherPages/SignUp.php" style="margin-top: 50px;"><label>Não tenho uma conta</label></a>
+        <a href="otherPages/SignUp.php" style="margin-top: 50px;">Não tenho uma conta</a>
     </form>
 
 </body>

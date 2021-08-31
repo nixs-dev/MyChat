@@ -8,30 +8,32 @@
 
 <body>
     <form id="frame" method="post" enctype="multipart/form-data">
-        <h2 style="margin-bottom: 50px;">Cadastro</h2>
-        <div>
-            <label class="form-label">Plano de Fundo</label>
-            <input type="file" accept="image/*" class="form-control" id="background" name="background">
+        <h2>Cadastro</h2>
+        <div class="inputs">
+            <div>
+                <label class="form-label">Plano de Fundo</label>
+                <input type="file" accept="image/*" class="form-control" id="background" name="background">
+            </div>
+            <div>
+                <label class="form-label">Foto de Perfil</label>
+                <input type="file" accept="image/*" class="form-control" id="photo" name="photo">
+            </div>
+            <div>
+                <label class="form-label">ID</label>
+                <input type="text" class="form-control" id="id" name="id" disabled>
+            </div>
+            <div>
+                <label class="form-label">Nome de usuário</label>
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div>
+                <label class="form-label">Senha</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div id="result" style="margin-bottom: 10px; color: red; -webkit-text-stroke: 0.5px black;">
+            </div>
+            <button type="submit" class="btn">Cadastrar</button>
         </div>
-        <div>
-            <label class="form-label">Foto de Perfil</label>
-            <input type="file" accept="image/*" class="form-control" id="photo" name="photo">
-        </div>
-        <div>
-            <label class="form-label">ID</label>
-            <input type="text" class="form-control" id="id" name="id" disabled>
-        </div>
-        <div>
-            <label class="form-label">Nome de usuário</label>
-            <input type="text" class="form-control" id="username" name="username">
-        </div>
-        <div>
-            <label class="form-label">Senha</label>
-            <input type="password" class="form-control" id="password" name="password">
-        </div>
-        <div id="result" style="margin-bottom: 10px; color: red; -webkit-text-stroke: 0.5px black;">
-        </div>
-        <button type="submit" class="btn btn-info">Cadastrar</button>
     </form>
     <?php
 
