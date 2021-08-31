@@ -1,3 +1,10 @@
+body {
+    background-image: url("Images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #bodyPage {
     height: 100%;
     width: 80%;
@@ -7,11 +14,27 @@
     right: 0;
     overflow-x: hidden;
     padding-top: 16px;
+    background-color: transparent;
+}
 
-    background-image: url("Images/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+#bodyPage #usersPanel {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+#bodyPage #usersPanel #searchBar {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+
+    width: 50%;
+}
+
+#bodyPage #usersPanel #friends {
+    margin-top: 30px;
 }
 
 .form-popup {
@@ -20,7 +43,6 @@
     height: 100%;
     width: 50%;
     float: right;
-    border: 3px solid #f1f1f1;
 }
 
 
@@ -86,14 +108,12 @@
 }
 
 #send {
-    display:inline-block;
     width: 30%;
     height: 60%;
     margin-left: 20px;
 }
 
 #info {
-    display: inline-block;
     width: 10%;
     height: 60%;
     margin-left: 20px;
@@ -103,6 +123,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    border: 1px solid #f1f1f1;
 }
 
 #chat-footer {
@@ -112,12 +133,13 @@
     width: 100%;
     height: 10%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 #chat-body {
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 90%;
     overflow:auto;
@@ -138,10 +160,8 @@
     height: 100%;
     width: 20%;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
     padding-top: 16px;
     display: flex;
     justify-content: center;
@@ -151,9 +171,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    -webkit-box-shadow:inset 0px 0px 0px 5px #000;
-    -moz-box-shadow:inset 0px 0px 0px 5px #000
-    box-shadow:inset 0px 0px 0px 5px #000
+    border: 2px solid #000000;
 }
 
 #profilePhoto {
