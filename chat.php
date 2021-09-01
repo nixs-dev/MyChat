@@ -24,6 +24,12 @@
             <div>
                 <label>Configurações</label>
             </div>
+             <div>
+                <label>Bloqueados</label>
+            </div>
+            <div>
+                <label>Sobre</label>
+            </div>
         </div>
         <button id="logout" onclick="finishSession()"><img src="Images/logoutIcon.png"></button>
     </div>
@@ -31,7 +37,7 @@
         <div id="usersPanel">
             <div id="searchBar">
                 <input type="text" placeholder="Pesquisar">
-                <button>Ok</button>
+                <button><i class="fas fa-search"></i></button>
             </div>
             <div id="friends">
                 <?php
