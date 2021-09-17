@@ -35,13 +35,13 @@ function updateUserStatus()
                     var status;
                     var cor;
 
-                    if (user.status == 1) {
+                    if (user.status == "Online") {
                         status = "Online";
-                        cor = "#0ed200";
+                        cor = "#00FF00";
                     }
                     else {
-                        status = "Offline";
-                        cor = "#dd0c00";
+                        status = user.status;
+                        cor = "#FF0000";
                     }
 
                     userDiv = userDiv.querySelector("#status");
@@ -53,6 +53,19 @@ function updateUserStatus()
         }
     };
     requestUsers.send();
+
+    requestChangeMyStatus = new XMLHttpRequest();
+    var url = "Tools/updateMyStatus.php";
+    var formData = new FormData();
+    formData.append("user", userID);
+    requestChangeMyStatus.open("POST", url, true);
+    requestChangeMyStatus.onreadystatechange = function() {
+
+        if (requestChangeMyStatus.readyState == 4) {
+            
+        }
+    };
+    requestChangeMyStatus.send(formData);
 }
 
 setInterval(updateMessagesList, 500);

@@ -1,8 +1,5 @@
 body {
-    background-image: url("../Images/backgroundLogin.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #808080;
 }
 
 #title {

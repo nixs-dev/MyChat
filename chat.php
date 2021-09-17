@@ -75,13 +75,20 @@
                             $profile = str_replace("UserName", $user->getNick(), $profile);
                             $profile = str_replace("UserID", $user->getId(), $profile);
 
-                            if ($user->getStatus() == 1) {
+                            $lastDateTime = explode(" ", $user->getStatus());
+                            $currentDateTime = explode(" ", date('Y-m-d H:i:s'));
+                            $lastTime = explode(":", $lastDateTime[1]);
+                            $currentTime = explode(":", $currentDateTime[1]);
+
+                            if($lastTime[0] == $currentTime[0] && $lastTime[1] == $currentTime[1]) {
                                 $status = "Online";
-                                $color = "#0ed200";
-                            } else {
-                                $status = "Offline";
-                                $color = "#dd0c00";
+                                $color = "#00FF00";
                             }
+                            else {
+                                $status = $lastDateTime[1];
+                                $color = "#FF0000";
+                            }
+
 
                             $profile = str_replace("UserStatus", $status, $profile);
                             $profile = str_replace("#000000", $color, $profile);

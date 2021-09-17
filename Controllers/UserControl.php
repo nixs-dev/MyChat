@@ -14,7 +14,7 @@ class UserControl
         $items = array();
 
         while ($row = $qry->fetch()) {
-            $items[] = new User($row["Fundo"], $row["Imagem"], $row["ID"], $row["Nick"], $row["Status"]);
+            $items[] = new User($row["Fundo"], $row["Imagem"], $row["ID"], $row["Nick"], $row["UltimaVez"]);
         }
 
         return $items;
