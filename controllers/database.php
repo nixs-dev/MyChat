@@ -1,7 +1,7 @@
 <?php
 
-$usuario = 'root';
-$senha = 'santodeus123';
+$usuario = 'dev';
+$senha = 'sandbox';
 $banco = 'mychat';
 
 try {

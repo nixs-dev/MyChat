@@ -1,12 +1,11 @@
 <html>
-
 <head>
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="Profile.css">
-    <script src="../Tools/Session.js"></script>
-    <script src="../ComponentsCtrl/ProfileEditor.js"></script>
-    <script src="../Tools/Profile.js"></script>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <script src="/static/js/session.js"></script>
+    <script src="/static/js/profile_editor.js"></script>
+    <script src="/static/js/profile.js"></script>
 </head>
 
 <body onload="fillProfile()">
@@ -18,7 +17,7 @@
         <h2 id="title">Perfil</h2>
         <div id="profilePhoto">
             <input id="fileInput2" type="file" style="display:none;" onchange="ChangeProfilePhoto(this);" />
-            <img id="photo" src="../Images/UserIcon.png" onclick="document.getElementById('fileInput2').click();" />
+            <img id="photo" src="/static/img/user_icon.png" onclick="document.getElementById('fileInput2').click();" />
         </div>
         <div>
             <label>ID : </label>
@@ -37,7 +36,5 @@
 
         <input type="button" id="save" value="Salvar" onclick="Save();" disabled="disabled" />
     </form>
-
 </body>
-
 </html>

@@ -6,7 +6,7 @@ var userName = null;
 
 function getSession() {
     request = new XMLHttpRequest();
-    var url = "/Tools/getPhpSession.php";
+    var url = "/tools/getPhpSession.php";
     request.open("GET", url, false);
     request.onreadystatechange = function() {
 
@@ -24,7 +24,7 @@ function getSession() {
                 userName = r["username"];
             }
             else {
-                window.location.href = 'http://localhost/mychat/';
+                window.location.href = '/index.php';
             }
         }
     };
@@ -33,11 +33,11 @@ function getSession() {
 
 function finishSession() {
     request = new XMLHttpRequest();
-    var url = "Tools/finishSession.php";
+    var url = "/tools/finishSession.php";
     request.open("GET", url, true);
     request.onreadystatechange = function() {
 
-        window.location.href = '/';
+        window.location.href = '/index.php';
         
     };
     request.send();

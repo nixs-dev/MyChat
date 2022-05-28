@@ -1,5 +1,5 @@
 body {
-    background-image: url("Images/backgroundLogin.jpg");
+    background-image: url("/static/img/background_login.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,7 +29,7 @@ body {
     border: 5px inset #ffff66;
 }
 
-#frame h1 {
+#frame h2 {
     font-family: cursive;
     align-self: center;
 }

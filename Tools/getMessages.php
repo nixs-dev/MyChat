@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . "/../databaseConnector.php";
+require_once dirname(__FILE__) . "/../controllers/database.php";
 global $conn;
 
 $main = $_GET["main"];

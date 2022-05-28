@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__) . "/../databaseConnector.php";
-require_once dirname(__FILE__) . "/../Models/Message.php";
+require_once dirname(__FILE__) . "/database.php";
+require_once dirname(__FILE__) . "/../models/message.php";
 
 class MessageControl
 {

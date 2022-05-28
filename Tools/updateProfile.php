@@ -2,9 +2,9 @@
 
 Error_reporting(0);
 
-include_once dirname(__FILE__) . "/../databaseConnector.php";
-include_once dirname(__FILE__) . "/../Models/User.php";
-include_once dirname(__FILE__) . "/../Controllers/UserControl.php";
+include_once dirname(__FILE__) . "/../controllers/database.php";
+include_once dirname(__FILE__) . "/../models/user.php";
+include_once dirname(__FILE__) . "/../controllers/user.php";
 
 $ctrl = new UserControl();
 

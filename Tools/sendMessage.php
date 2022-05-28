@@ -1,6 +1,6 @@
 <?php
 
-include_once dirname(__FILE__) . "/../databaseConnector.php";
+include_once dirname(__FILE__) . "/../controllers/database.php";
 
 global $conn;
 

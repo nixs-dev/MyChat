@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__) . "/../databaseConnector.php";
-require_once dirname(__FILE__) . "/../Models/User.php";
+require_once dirname(__FILE__) . "/../controllers/database.php";
+require_once dirname(__FILE__) . "/../models/user.php";
 
 global $conn;
 

@@ -1,25 +1,26 @@
+<?php
+session_start();
+?>
 <html>
-
 <head>
     <title>Chat</title>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/17c066a4d1.js" crossorigin="anonymous"></script>
-    <script src="Tools/Session.js"></script>
-    <script src="Tools/Chat.js"></script>
-    <script src="Tools/Profile.js"></script>
-    <script src="ComponentsCtrl/popup.js"></script>
-    <link rel="stylesheet" href="styleChat.css">
+    <script src="/static/js/session.js"></script>
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/profile.js"></script>
+    <script src="/static/js/popup.js"></script>
+    <link rel="stylesheet" href="/static/css/chat.css">
 </head>
-
 <body onload="getSession(); setPhotoProfile();">
 
     <div id="sidebar">
         <div id="profilePhoto">
-            <img id="photoMenu" src="Images/UserIcon.png">
+            <img id="photoMenu" src="/static/img/user_icon.png">
         </div>
         <div id="options">
             <div>
-                <a href="otherPages/MyProfile.php"><label>Meu Perfil</label></a>
+                <a href="/views/my_profile.php"><label>Meu Perfil</label></a>
             </div>
             <div>
                 <label>Configurações</label>
@@ -31,7 +32,7 @@
                 <label>Sobre</label>
             </div>
         </div>
-        <button id="logout" onclick="finishSession()"><img src="Images/logoutIcon.png"></button>
+        <button id="logout" onclick="finishSession()"><img src="/static/img/logout_icon.png"></button>
     </div>
     <div id="bodyPage">
         <div id="usersPanel">
@@ -41,10 +42,8 @@
             </div>
             <div id="friends">
                 <?php
-                    require_once dirname(__FILE__) . "/Models/User.php";
-                    require_once dirname(__FILE__) . "/Controllers/UserControl.php";
-
-                    session_start();
+                    require_once dirname(__FILE__) . "/../models/user.php";
+                    require_once dirname(__FILE__) . "/../controllers/user.php";
 
                     $userProfileModel = "
                                             <div id='UserID' class='profile' onclick='openForm(this.id);'>
@@ -69,7 +68,7 @@
                             if (!is_null($profilePhoto)) {
                                 $profile = str_replace("profilePhoto", "data:image/jpg;charset=utf8;base64," . base64_encode($profilePhoto), $userProfileModel);
                             } else {
-                                $profile = str_replace("profilePhoto", "Images/UserIcon.png", $userProfileModel);
+                                $profile = str_replace("profilePhoto", "/static/img/user_icon.png", $userProfileModel);
                             }
 
                             $profile = str_replace("UserName", $user->getNick(), $profile);
@@ -115,5 +114,4 @@
         </div>
     </div>
 </body>
-
 </html>

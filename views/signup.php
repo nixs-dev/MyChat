@@ -1,11 +1,9 @@
 <html>
-
 <head>
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="Sign.css">
+    <link rel="stylesheet" href="/static/css/signup.css">
 </head>
-
 <body>
     <form id="frame" method="post" enctype="multipart/form-data">
         <h2>Cadastro</h2>
@@ -37,8 +35,8 @@
     </form>
     <?php
 
-    include_once dirname(__FILE__) . "/../Controllers/UserControl.php";
-    include_once dirname(__FILE__) . "/../Models/User.php";
+    include_once dirname(__FILE__) . "/../controllers/user.php";
+    include_once dirname(__FILE__) . "/../models/user.php";
 
     $controler = new UserControl();
 
@@ -74,7 +72,7 @@
 
             $controler->insert($user, $pass);
 
-            header('location: ../index.php');
+            header('location: /index.php');
         } else {
             echo "<script>document.getElementById('result').innerHTML += 'Nome já existente';</script>";
         }
@@ -82,5 +80,4 @@
 
     ?>
 </body>
-
 </html>

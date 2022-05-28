@@ -1,27 +1,20 @@
 var receivedMessages = [];
 
 function showProfile(param) {
-
     if (param == "Mine") {
-
-        window.location.href = 'otherPages/MyProfile.php';
-
+        window.location.href = '/views/my_profile.php';
     }
     else {
-
-        window.location.href = 'otherPages/OtherProfile.php?id=' + anotherUserID;
-
+        window.location.href = '/views/other_profile.php?id=' + anotherUserID;
     }
-
 }
 
-
-setInterval(updateUserStatus, 1000);
+setInterval(updateUserStatus, 3000);
 
 function updateUserStatus()
 {
     requestUsers = new XMLHttpRequest();
-    var url = "Tools/getUserStatuses.php";
+    var url = "/tools/getUserStatuses.php";
     requestUsers.open("GET", url, true);
     requestUsers.onreadystatechange = function() {
 
@@ -55,7 +48,7 @@ function updateUserStatus()
     requestUsers.send();
 
     requestChangeMyStatus = new XMLHttpRequest();
-    var url = "Tools/updateMyStatus.php";
+    var url = "/tools/updateMyStatus.php";
     var formData = new FormData();
     formData.append("user", userID);
     requestChangeMyStatus.open("POST", url, true);
@@ -74,7 +67,7 @@ function updateMessagesList()
 {
     if (document.getElementById("chat").style.display == "block") {
         requestMessages = new XMLHttpRequest();
-        var url = "Tools/getMessages.php?main=" + userID + "&user=" + anotherUserID;
+        var url = "/tools/getMessages.php?main=" + userID + "&user=" + anotherUserID;
         requestMessages.open("GET", url, true);
         requestMessages.onreadystatechange = function () {
 
@@ -118,7 +111,7 @@ function sendMessage() {
     var message = document.getElementById("message").value;
 
     request = new XMLHttpRequest();
-    var url = "Tools/sendMessage.php?main=" + userID + "&user=" + anotherUserID + "&msg=" + message;
+    var url = "/tools/sendMessage.php?main=" + userID + "&user=" + anotherUserID + "&msg=" + message;
     request.open("GET", url, true);
     request.onreadystatechange = function () {};
     request.send();
