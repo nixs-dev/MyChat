@@ -14,7 +14,8 @@ class MessageControl
         $items = array();
 
         while ($row = $qry->fetch()) {
-            $items[] = new Message($row["ID"], $row["idRemetente"], $row["idDestinatario"], $row["Conteudo"]);
+            $items[] = new Message($row["ID"], $row["idRemetente"], $row["idDestinatario"], $row["Conteudo_texto"]
+              $row["Conteudo_blob"]);
         }
 
         return $items;

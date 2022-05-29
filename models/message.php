@@ -5,14 +5,16 @@ class Message
     public $ID;
     public $idRemetente;
     public $idDestinatario;
-    public $conteudo;
+    public $conteudo_texto;
+    public $conteudo_blob;
 
-    public function __construct($ID, $idRemetente, $idDestinatario, $conteudo)
+    public function __construct($ID, $idRemetente, $idDestinatario, $conteudo_texto, $conteudo_blob)
     {
         $this->ID = $ID;
         $this->idRemetente = $idRemetente;
         $this->idDestinatario = $idDestinatario;
-        $this->conteudo = $conteudo;
+        $this->conteudo_texto = $conteudo_texto;
+        $this->$conteudo_blob = $conteudo_blob;
     }
 
     public function setID($ID)
@@ -30,9 +32,14 @@ class Message
         $this->idDestinatario = $idDestinatario;
     }
 
-    public function setConteudo($conteudo)
+    public function setConteudoTexto($conteudo_texto)
     {
-        $this->conteudo = $conteudo;
+        $this->conteudo_texto = $conteudo_texto;
+    }
+    
+    public function setConteudoBlob($conteudo_blob)
+    {
+        $this->conteudo_blob = $conteudo_blob;
     }
 
     public function getID()
@@ -50,8 +57,13 @@ class Message
         return $this->idDestinatario;
     }
 
-    public function getConteudo()
+    public function getConteudoTexto()
     {
-        return $this->conteudo;
+        return $this->conteudo_texto;
+    }
+    
+    public function getConteudoBlob()
+    {
+        return $this->conteudo_blob;
     }
 }

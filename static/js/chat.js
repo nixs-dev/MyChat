@@ -9,7 +9,7 @@ function showProfile(param) {
     }
 }
 
-setInterval(updateUserStatus, 3000);
+//setInterval(updateUserStatus, 3000);
 
 function updateUserStatus()
 {
@@ -78,7 +78,7 @@ function updateMessagesList()
 
                 r.forEach(msg => {
 
-                    if (receivedMessages.indexOf(msg["id"]) == -1 && msg["content"] != null) {
+                    if (receivedMessages.indexOf(msg["id"]) == -1 && msg["text_content"] != null) {
                         
                         var element = document.createElement("div");
 
@@ -89,7 +89,14 @@ function updateMessagesList()
                             element.className = "msgAnother";
                         }
 
-                        element.textContent = msg["content"];
+                        element.textContent = msg["text_content"];
+                        
+                        if (msg["blob_content"]) {
+                            var blob = document.createElement("img");
+                            blob.id = "blob-image";
+                            blob.src = "data:image/jpg;charset=utf8;base64, " + btoa(msg["blob_content"]);
+                            element.appendChild(blob);
+                        }
 
                         chat.appendChild(element);
 

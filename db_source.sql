@@ -34,7 +34,8 @@ CREATE TABLE `mensagens` (
   `ID` int(10) NOT NULL,
   `idRemetente` int(5) NOT NULL,
   `idDestinatario` int(5) NOT NULL,
-  `Conteudo` varchar(300) NOT NULL
+  `Conteudo_texto` varchar(300) NOT NULL,
+  `Conteudo_blob` longblob NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -92,9 +93,9 @@ INSERT INTO `usuarios` (`Fundo`, `Imagem`, `ID`, `Nick`, `Senha`, `UltimaVez`) V
 -- Extraindo dados da tabela `mensagens`
 --
 
-INSERT INTO `mensagens` (`ID`, `idRemetente`, `idDestinatario`, `Conteudo`) VALUES
-(1, 1010, 60071, 'Oi'),
-(3, 60071, 110, 'Oi user');
+INSERT INTO `mensagens` (`ID`, `idRemetente`, `idDestinatario`, `Conteudo_texto`, `Conteudo_blob`) VALUES
+(1, 1010, 60071, 'Oi', NULL),
+(3, 60071, 110, 'Oi user', NULL);
 
 -- Índices para tabelas despejadas
 --

@@ -17,7 +17,6 @@ body {
     background-color: transparent;
 }
 
-
 #bodyPage #usersPanel {
     display: flex;
     flex-direction: column;
@@ -51,6 +50,8 @@ body {
 
 
 .msg {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     margin: 50px auto;
     background: #00bfb6;
@@ -79,6 +80,8 @@ body {
 }
 
 .msgAnother {
+    display: flex;
+    flex-direction: column;
     width: 300px;
     margin: 50px auto;
     background: #00bfb6;
@@ -104,6 +107,10 @@ body {
     border-bottom: 10px solid transparent;
     right: -19px;
     top: 6px;
+}
+
+.msg #blob-image, .msgAnother #blob-image {
+    width: 90%;
 }
 
 #message {

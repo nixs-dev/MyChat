@@ -14,7 +14,7 @@ $qry->execute();
 $items = array();
 
 while ($row = $qry->fetch()) {
-    $items[] = ["id" => $row["ID"], "content" => $row["Conteudo"], "sentby" => $row["idRemetente"]];
+    $items[] = ["id" => $row["ID"], "text_content" => $row["Conteudo_texto"], "blob_content" => utf8_encode($row["Conteudo_blob"]), "sentby" => $row["idRemetente"]];
 }
 
 echo json_encode($items);
