@@ -85,14 +85,18 @@ class UserControl
     {
         global $conn;
 
-        $qry = $conn->prepare("INSERT INTO usuarios VALUES (:fnd, :img, :id, :name, :pass, :stat)");
+        $qry = $conn->prepare("INSERT INTO usuarios (Fundo, Imagem, Nick, Senha, UltimaVez) VALUES (:fnd, :img, :name, :pass, :stat)");
         $qry->bindValue(":fnd", $userObj->getFundo(), PDO::PARAM_LOB);
         $qry->bindValue(":img", $userObj->getImagem(), PDO::PARAM_LOB);
-        $qry->bindValue(":id", $userObj->getID());
         $qry->bindValue(":name", $userObj->getNick());
         $qry->bindParam(":pass", $pass);
         $qry->bindValue(":stat", $userObj->getStatus());
-
-        $qry->execute();
+        
+        if($qry->execute()) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }

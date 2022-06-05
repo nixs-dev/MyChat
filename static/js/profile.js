@@ -38,7 +38,7 @@ function Save() {
 
     xhttp = new XMLHttpRequest();
 
-    var url = "Tools/updateProfile.php";
+    var url = "/tools/updateProfile.php";
 
     xhttp.open("POST", url, true);
 

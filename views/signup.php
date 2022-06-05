@@ -1,3 +1,36 @@
+<?php
+include_once dirname(__FILE__) . "/../controllers/user.php";
+include_once dirname(__FILE__) . "/../models/user.php";
+
+$controler = new UserControl();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST["username"];
+    $pass = $_POST["password"];
+    $photo = $_FILES["photo"];
+    $back = $_FILES["background"];
+
+    $verify = $controler->findByName($name);
+
+    if ($verify == "") {
+        $backgroundData = !empty($back["tmp_name"]) ? file_get_contents($back["tmp_name"]) : NULL;
+        $photoData = !empty($photo["tmp_name"]) ? file_get_contents($photo["tmp_name"]) : NULL;
+        
+        $user = new User($backgroundData, $photoData, NULL, $name, date('Y-m-d H:i:s'));
+
+        if($controler->insert($user, $pass)) {
+            header('location: /index.php');
+        }
+        else {
+            echo "<script>document.getElementById('result').innerHTML += 'Erro ao realizar seu cadastro';</script>";
+        }
+    } else {
+        echo "<script>document.getElementById('result').innerHTML += 'Nome já existente';</script>";
+    }
+}
+
+?>
 <html>
 <head>
     <title>Login</title>
@@ -17,10 +50,6 @@
                 <input type="file" accept="image/*" class="form-control" id="photo" name="photo">
             </div>
             <div>
-                <label class="form-label">ID</label>
-                <input type="text" class="form-control" id="id" name="id" disabled>
-            </div>
-            <div>
                 <label class="form-label">Nome de usuário</label>
                 <input type="text" class="form-control" id="username" name="username">
             </div>
@@ -33,51 +62,5 @@
             <button type="submit" class="btn">Cadastrar</button>
         </div>
     </form>
-    <?php
-
-    include_once dirname(__FILE__) . "/../controllers/user.php";
-    include_once dirname(__FILE__) . "/../models/user.php";
-
-    $controler = new UserControl();
-
-    while (true) {
-        $id = rand(10000, 99999);
-
-        $verify = $controler->findById($id);
-
-        if ($verify == "") {
-            echo "<script>document.getElementById('id').value = {$id} </script>";
-            break;
-        }
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $id = $id;
-        $name = $_POST["username"];
-        $pass = $_POST["password"];
-        $photo = $_FILES["photo"];
-        $back = $_FILES["background"];
-
-        $verify = $controler->findByName($name);
-
-        if ($verify == "") {
-            $backgroundData = file_get_contents($back["tmp_name"]);
-            $photoData = file_get_contents($photo["tmp_name"]);
-
-            $photoData == "" ? $photoData = null : $photoData = $photoData;
-            $backgroundData == "" ? $backgroundData = null : $backgroundData = $backgroundData;
-
-            $user = new User($backgroundData, $photoData, $id, $name, 0);
-
-            $controler->insert($user, $pass);
-
-            header('location: /index.php');
-        } else {
-            echo "<script>document.getElementById('result').innerHTML += 'Nome já existente';</script>";
-        }
-    }
-
-    ?>
 </body>
 </html>

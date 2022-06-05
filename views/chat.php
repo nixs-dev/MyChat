@@ -106,9 +106,16 @@ session_start();
                 </div>
 
                 <div id="chat-footer">
-                    <input type="text" id="message" placeholder="Type here" name="message" required>
-
-                    <button type="button" id="send" onclick="sendMessage();"><i class="fas fa-paper-plane"></i></button>
+                    <div id="blobs-indexed">
+                        
+                    </div>
+                    <div id="msg-data">
+                        <input type="text" id="message" placeholder="Type here" name="message" required>
+    
+                        <button type="button" id="send" onclick="sendMessage();"><i class="fas fa-paper-plane"></i></button>
+                        <input type="file" id="msg-blob-uploader" style="display: none;" onchange="indexBlobs(this);">
+                        <button type="button" id="uploader-trigger" onclick="document.querySelector('#msg-blob-uploader').click();"><i class="fas fa-file"></i></button>
+                    </div>
                 </div>
             </form>
         </div>

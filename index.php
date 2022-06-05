@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $userOK = $ctrl->checkUserName($username);
     $passOK = $ctrl->checkPassword($username, $password);
-
+    
     if ($userOK && $passOK) {
         $user = $ctrl->findByName($username);
 

@@ -1,9 +1,10 @@
 <?php
+session_start();
 
 require_once dirname(__FILE__) . "/../controllers/database.php";
 global $conn;
 
-$main = $_GET["main"];
+$main = $_SESSION["id"];
 $user = $_GET["user"];
 
 $qry = $conn->prepare("SELECT * FROM mensagens WHERE ((idRemetente = :main and idDestinatario = :user) or (idRemetente = :user and idDestinatario = :main))");

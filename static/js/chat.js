@@ -1,4 +1,5 @@
 var receivedMessages = [];
+var indexedBlobs = [];
 
 function showProfile(param) {
     if (param == "Mine") {
@@ -67,7 +68,7 @@ function updateMessagesList()
 {
     if (document.getElementById("chat").style.display == "block") {
         requestMessages = new XMLHttpRequest();
-        var url = "/tools/getMessages.php?main=" + userID + "&user=" + anotherUserID;
+        var url = "/tools/getMessages.php?user=" + anotherUserID;
         requestMessages.open("GET", url, true);
         requestMessages.onreadystatechange = function () {
 
@@ -116,12 +117,70 @@ function setMessageAsReceived(id) {
 
 function sendMessage() {
     var message = document.getElementById("message").value;
-
-    request = new XMLHttpRequest();
-    var url = "/tools/sendMessage.php?main=" + userID + "&user=" + anotherUserID + "&msg=" + message;
-    request.open("GET", url, true);
-    request.onreadystatechange = function () {};
-    request.send();
-
+    var blobs = indexedBlobs;
+    var requests_forms = [];
+    var url = "/tools/sendMessage.php";
+    var message_form = new FormData();
+    var request = new XMLHttpRequest();
+    
+    message_form.append("user", anotherUserID);
+    message_form.append("msg_text", message);
+    
+    if(blobs.length > 0) {
+        message_form.append("msg_blob", blobs[0]);
+        
+        blobs.shift()
+    }
+    else {
+        if(message == "") {
+            return;
+        }
+    }
+    
+    requests_forms.push(message_form);
+    
+    blobs.forEach(file => {
+        message_form = new FormData();
+        message_form.append("user", anotherUserID);
+        message_form.append("msg_text", "");
+        message_form.append("msg_blob", file);
+        
+        requests_forms.push(message_form);
+    });
+    
+    (function send_msg_list(i) {
+        if(i == requests_forms.length) {
+            return;
+        }
+        
+        request.open("POST", url, true);
+        request.onreadystatechange = function () {
+            if(request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+                send_msg_list(i + 1);
+            }
+        };
+        request.send(requests_forms[i]);
+    })(0);
+    
     document.getElementById("message").value = "";
+    document.getElementById("blobs-indexed").innerHTML = "";
+    indexedBlobs = [];
+}
+
+function indexBlobs(fileInput) {
+    var previews_div = document.querySelector("#blobs-indexed");
+    var reader = new FileReader();
+    
+    Array.from(fileInput.files).forEach(file => {
+        var preview = document.createElement("img");
+        
+        reader.onloadend = function () {
+            preview.src = reader.result;
+            previews_div.appendChild(preview);
+            indexedBlobs.push(file);
+        }
+        
+        reader.readAsDataURL(file);
+    });
+    fileInput.files = [];
 }
